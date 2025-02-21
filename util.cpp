@@ -13,7 +13,7 @@ std::string convToLower(std::string src)
 
 /** Complete the code to convert a string containing a rawWord
     to a set of words based on the criteria given in the assignment **/
-std::set<std::string> parseStringToWords(string rawWords)
+std::set<std::string> parseStringToWords(std::string rawWords)
 {
     // remove all punctuation
     for (size_t i = 0; i < rawWords.size(); ++i){  
@@ -22,7 +22,7 @@ std::set<std::string> parseStringToWords(string rawWords)
             rawWords[i] = ' ';  // here s an exam ple
         } 
     }
-    convToLower(rawWords);  // lowercase all words
+    rawWords = convToLower(rawWords);  // lowercase all words
     
     std::istringstream iss(rawWords); // turn the cleaned string into a stream
     std::string word;   // words to add to keywords set

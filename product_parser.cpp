@@ -101,7 +101,8 @@ Product* ProductBookParser::parseSpecificProduct(std::string category,
     }
 
     lineno++;
-    getline(is, author_);
+    getline(is, author_);   
+    // ? why don't we need stringstream here ? 
     if(is.fail()) {
         error = true;
         errorMsg = "Unable to read author";
@@ -130,8 +131,8 @@ std::string ProductBookParser::categoryID()
  */
 Product* ProductBookParser::makeProduct()
 {
-
-
+    Book* book = new Book(categoryID(), prodName_, price_, qty_, isbn_, author_);
+    return book;
 }
 
 
@@ -185,8 +186,8 @@ std::string ProductClothingParser::categoryID()
  */
 Product* ProductClothingParser::makeProduct()
 {
-
-
+    Clothing* clothing = new Clothing(categoryID(), prodName_, price_, qty_, size_, brand_);
+    return clothing;
 
 }
 
@@ -245,6 +246,6 @@ std::string ProductMovieParser::categoryID()
  */
 Product* ProductMovieParser::makeProduct()
 {
-
-
+    Movie* movie = new Movie(categoryID(), prodName_, price_, qty_, genre_, rating_);
+    return movie; 
 }

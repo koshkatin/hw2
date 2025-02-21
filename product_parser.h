@@ -3,6 +3,9 @@
 #include <string>
 #include <iostream>
 #include "product.h"
+#include "book.h"
+#include "clothing.h"
+#include "movie.h"
 
 class ProductParser
 {
@@ -46,7 +49,7 @@ protected:
 
 
     /**
-     * Dynamically allocates a specific product type from the data
+     *  Dynamically allocates a specific product type from the data
      *  parsed and stored in the specific product parser
      */
     virtual Product* makeProduct() = 0;

@@ -13,7 +13,7 @@
 template <typename T>
 std::set<T> setIntersection(std::set<T>& s1, std::set<T>& s2)
 {
-    std::set<T> outSet;
+    std::set<T> interSet;
     typename std::set<T>::iterator it1 = s1.begin();
     typename std::set<T>::iterator it2 = s2.begin();
 
@@ -26,32 +26,32 @@ std::set<T> setIntersection(std::set<T>& s1, std::set<T>& s2)
             ++it2;
         } 
         else{
-            outSet.insert(*it1);
+            interSet.insert(*it1);
             ++it1;
             ++it2;
         } 
     }
 
-    return outSet;
+    return interSet;
 }
 template <typename T>
 std::set<T> setUnion(std::set<T>& s1, std::set<T>& s2)
 {
-    std::set<T> outSet;   // elements from both sets, w/o duplicates
+    std::set<T> unionSet;   // elements from both sets, w/o duplicates
     typename std::set<T>::iterator it1 = s1.begin();
     typename std::set<T>::iterator it2 = s2.begin();
 
-    // copy all elemets from s1 and s2 into outSet
+    // copy all elemets from s1 and s2 into unionSet
     // ** duplicate inserts are ignored by set **
     for (it1 = s1.begin(); it1 != s1.end(); ++it1) {
-        outSet.insert(*it1);
+        unionSet.insert(*it1);
     }
 
     for (it2 = s2.begin(); it2 != s2.end(); ++it2) {
-        outSet.insert(*it2);
+        unionSet.insert(*it2);
     }
 
-    return outSet;
+    return unionSet;
 }
 
 /***********************************************/

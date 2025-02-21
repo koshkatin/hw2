@@ -1,5 +1,15 @@
 #include "mydatastore.h"
 
+MyDataStore::~MyDataStore()
+{
+    for (std::set<Product*>::iterator it = products_.begin(); it != products_.end(); ++it) {
+        delete *it;
+    }
+    for (std::set<User*>::iterator it = users_.begin(); it != users_.end(); ++it) {
+        delete *it;
+    }
+}
+
 void MyDataStore::addProduct(Product* p)
 {
     products_.insert(p);    ///
@@ -38,7 +48,7 @@ void MyDataStore::showCart(std::string u)
     std::deque<Product*>::iterator it;
     int i = 1;
     for (it = carts_[u].begin(); it != carts_[u].end(); ++it) {
-        std::endl << std::cout << i << ".  " << (*it)->displayString() << std::endl;
+        std::cout << std::endl << i << ".  " << (*it)->displayString() << std::endl;
         ++i;
     }
 }

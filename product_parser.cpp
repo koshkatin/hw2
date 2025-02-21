@@ -84,6 +84,8 @@ ProductBookParser::ProductBookParser() : ProductParser()
 {
 }
 
+ProductBookParser::~ProductBookParser() { } // Destructor definition
+
 Product* ProductBookParser::parseSpecificProduct(std::string category,
         std::istream& is,
         bool& error,
@@ -140,6 +142,8 @@ ProductClothingParser::ProductClothingParser()
 {
 }
 
+ProductClothingParser::~ProductClothingParser() { } // Destructor definition
+
 Product* ProductClothingParser::parseSpecificProduct(std::string category,
         std::istream& is,
         bool& error,
@@ -188,7 +192,6 @@ Product* ProductClothingParser::makeProduct()
 {
     Clothing* clothing = new Clothing(categoryID(), prodName_, price_, qty_, size_, brand_);
     return clothing;
-
 }
 
 
@@ -197,6 +200,7 @@ ProductMovieParser::ProductMovieParser()
 {
 }
 
+ProductMovieParser::~ProductMovieParser() { } // Destructor definition
 
 Product* ProductMovieParser::parseSpecificProduct(std::string category,
         std::istream& is,

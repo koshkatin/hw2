@@ -8,6 +8,7 @@
 class MyDataStore : public DataStore
 {
 public:
+    ~MyDataStore() override;
     void addProduct(Product* p) override;
     void addUser(User* u) override;
     bool userExists(const std::string u) const;

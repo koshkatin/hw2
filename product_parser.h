@@ -65,6 +65,7 @@ class ProductBookParser : public ProductParser
 {
 public:
     ProductBookParser();
+    ~ProductBookParser();
     Product* parseSpecificProduct(std::string category,
                                   std::istream& is,
                                   bool& error,
@@ -86,6 +87,7 @@ class ProductClothingParser : public ProductParser
 {
 public:
     ProductClothingParser();
+    ~ProductClothingParser();
     Product* parseSpecificProduct(std::string category,
                                   std::istream& is,
                                   bool& error,
@@ -107,6 +109,7 @@ class ProductMovieParser : public ProductParser
 {
 public:
     ProductMovieParser();
+    ~ProductMovieParser();
     Product* parseSpecificProduct(std::string category,
                                   std::istream& is,
                                   bool& error,

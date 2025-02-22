@@ -26,6 +26,8 @@ private:
     std::set<User*> users_;
     // a map of user carts where carts store pointers to products added to cart
     std::map<std::string, std::deque<Product*>> carts_; 
+    // a map of products that share specific keywords
+    std::map<std::string, std::set<Product*>> keyMap_;
 
 };
 

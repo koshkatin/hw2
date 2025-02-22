@@ -142,7 +142,10 @@ ProductClothingParser::ProductClothingParser()
 {
 }
 
-ProductClothingParser::~ProductClothingParser() { } // Destructor definition
+ProductClothingParser::~ProductClothingParser() 
+{ 
+    
+} 
 
 Product* ProductClothingParser::parseSpecificProduct(std::string category,
         std::istream& is,
